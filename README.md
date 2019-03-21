@@ -1,6 +1,6 @@
-Java Bank Application - vreau sa fac o aplicatie bancara in Java.
+  Java Bank Application - vreau sa fac o aplicatie bancara in Java.
 
-Aceasta aplicatie va avea 2 tipuri de user : - administrator
+  Aceasta aplicatie va avea 2 tipuri de user : - administrator
                                              - client
 
 Dupa login:
@@ -12,4 +12,5 @@ Dupa login:
                   sa extraga bani
                   sa verifice soldul
                   sa transfere bani
-Aplicatia va folosi o baza de date online bazata pe MySql: https://www.db4free.net/
+
+  Aplicatia va folosi o baza de date online bazata pe MySql: https://www.db4free.net/
