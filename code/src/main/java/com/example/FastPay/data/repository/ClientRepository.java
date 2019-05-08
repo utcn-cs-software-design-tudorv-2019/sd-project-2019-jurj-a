@@ -8,4 +8,6 @@ import com.example.FastPay.data.entity.Client;
 @Repository
 public interface ClientRepository extends JpaRepository<Client,Integer> {
 
+	public Client findByUsername(String username);
+	
 }

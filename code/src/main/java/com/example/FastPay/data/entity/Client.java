@@ -25,7 +25,7 @@ public class Client {
 	private String address;
 
 	@Column(name = "password")
-	private int password = 0;
+	private String password;
 	// optional
 	@Column(name = "email")
 	private String email = "";
@@ -38,7 +38,7 @@ public class Client {
 	public Client() {
 	}
 
-	public Client(int clientId, String clientName, int cnp, String address, int password, String email) {
+	public Client(int clientId, String clientName, int cnp, String address, String password, String email) {
 		this.clientId=clientId;
 		this.clientName = clientName;
 		this.cnp=cnp;
@@ -49,6 +49,9 @@ public class Client {
 		
 	}
 
+	public Client(String clientName, String password) {
+		
+	}
 	
 
 	public String getEmail() {
@@ -91,11 +94,11 @@ public class Client {
 		this.address = address;
 	}
 
-	public int getpassword() {
+	public String getpassword() {
 		return password;
 	}
 
-	public void setpassword(int password) {
+	public void setpassword(String password) {
 		this.password = password;
 	}
 
@@ -114,7 +117,7 @@ public class Client {
         Client client = (Client) o;
         return clientId == client.clientId &&
                 cnp == client.cnp &&
-                password == client.password &&
+                Objects.equals(password, client.password) &&
                 Objects.equals(clientName, client.clientName) &&
                 Objects.equals(address, client.address) &&
                 Objects.equals(email, client.email);
