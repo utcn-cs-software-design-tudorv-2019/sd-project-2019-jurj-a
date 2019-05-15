@@ -13,6 +13,8 @@ import com.example.FastPay.data.entity.Client;
 @Controller
 public class LogInController {
 	
+	Client client = new Client();
+	
 	@Autowired
 	private ClientService clientService;
 
@@ -25,7 +27,10 @@ public class LogInController {
 	@GetMapping("ClientPage")
 	public String getClientStudent(@RequestParam("username") String username,@RequestParam("password") String password)
 	{
-		Client client = new Client(username,password);
+			
+		client.setClientName(username);
+		client.setpassword(password);
+		
 		if(clientService.validate(client)) return "ClientPage";
 		else return "Login";
 		

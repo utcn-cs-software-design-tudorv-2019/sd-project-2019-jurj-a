@@ -28,7 +28,9 @@ public class Card {
 	@JoinColumn(name = "admin_id")
 	private Admin admin;
 	
-	@ManyToMany(mappedBy = "cards")
+	@ManyToMany(cascade = { CascadeType.ALL })
+	@JoinTable(name = "bank", joinColumns = { @JoinColumn(name = "card_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "client_id") })
 	private List<Client> clients;
 	
 	public Card(int cardId, String cardName, int balance,LocalDate dateExp, Admin admin2) {

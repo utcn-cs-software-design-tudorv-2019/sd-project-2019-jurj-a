@@ -10,13 +10,20 @@ import com.example.FastPay.data.repository.ClientRepository;
 @Service
 public class ClientService {
 	
-	//@Autowired
+	@Autowired
 	ClientRepository clientRepository;
 
 	public boolean validate(Client client) {
 		// TODO Auto-generated method stub
-		//Client auxClient = clientRepository.findByUsername(client.getClientName());
-		return false;
+		
+		Client auxClient = clientRepository.findByClientName(client.getClientName());
+		
+		
+		if(auxClient.getpassword().equals(client.getpassword())) {
+		System.out.printf("success");
+		return true;
+		}
+		else return false;
 	}
 
 }

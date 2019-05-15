@@ -49,9 +49,6 @@ public class Client {
 		
 	}
 
-	public Client(String clientName, String password) {
-		
-	}
 	
 
 	public String getEmail() {
