@@ -45,12 +45,11 @@ public class Card {
 		
 	}
 	
-	public Card(String cardName, int balance,LocalDate dateExp, Admin admin) {
+	public Card(String cardName, int balance,LocalDate dateExp) {
 		
 		this.cardName=cardName;
 		this.balance=balance;
 		this.dateExp=dateExp;
-		this.admin=admin;
 		this.clients=new ArrayList<Client>();
  	}
 	

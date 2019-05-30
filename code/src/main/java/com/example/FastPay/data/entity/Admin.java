@@ -20,15 +20,15 @@ public class Admin {
 
 	@OneToMany(mappedBy = "admin", fetch = FetchType.EAGER)
 	private List<Card> creditCards;
+	
+	public Admin() {}
 
 	public Admin(int adminId, String name) {
+		this.adminId=adminId;
+		this.adminName=name;
 	}
 
-	public Admin() {
-		this.adminId = 0;
-		this.adminName = "";
-		this.creditCards = new ArrayList<Card>();
-	}
+	
 
 	public int getAdminId() {
 		return adminId;

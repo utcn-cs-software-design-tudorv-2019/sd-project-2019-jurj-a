@@ -13,7 +13,9 @@ public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int clientId = 0;
+	private int clientId;
+
+	
 
 	@Column(name = "client_name")
 	private String clientName;
@@ -106,6 +108,15 @@ public class Client {
 	public void setCreditCards(List<Card> creditCards) {
 		this.creditCards = creditCards;
 	}
+	
+	public int getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(int clientId) {
+		this.clientId = clientId;
+	}
+	
 
 	@Override
     public boolean equals(Object o) {

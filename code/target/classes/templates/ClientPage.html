@@ -3,8 +3,254 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+.button {
+	background-color: #FA5882;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+table {
+float:left;
+width:50%;
+}
+
+body {
+	background-image:
+		url("https://fr.kronospan-express.com/public/files/decors/kronodesign/K/K088.jpg");
+	background-color: #cccccc;
+}
+
+form {
+	vertical-align: top;
+	text-align: center;
+}
+html, body, #wrapper{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#brapper{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#brapper table {
+	vertical-align: top;
+	text-align: center;
+}
+
+#wrapper td {
+	vertical-align: top;
+	text-align: center;
+}
+.centerTable { margin: 0px auto; }
+#bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 75%;
+}
+#bottom {
+    bottom: 0;
+}
+
+.column {
+  float: Left;
+  width: 25%;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
 </head>
 <body>
-<h1>Client page</h1>
-</body>
+<div align='center'>
+<!-- EXCHANGERATES.ORG.UK LIVE CURRENCY RATES TICKER START -->
+<iframe src="//www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=500&s=1&mc=GBP&mbg=FA5882&bs=yes&bc=000044&f=verdana&fs=10px&fc=000044&lc=000044&lhc=FE9A00&vc=FE9A00&vcu=008000&vcd=FF0000&" width="500" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+<!-- EXCHANGERATES.ORG.UK LIVE CURRENCY RATES TICKER END -->
+</div>
+
+	<div id=top>
+	<table id="wrapper"><tr>
+			<td colspan="1"><img
+				src="https://cdn.fast-pay.cash/assets/images/logo/logo_color.png"
+				alt="FastPayLogo" align="middle">
+				
+				</td>
+				
+				</tr>
+				
+				</table>
+	
+</div>
+
+
+
+<div id=bottom>
+
+<div class="row">
+
+
+
+<div class="column">	
+
+
+
+	<table>
+	
+
+		<tr>
+			<td colspan="1" align="center">
+				<div class="row">
+				<div class="column">
+				<form method=post action="ClientPage">
+				        <input class='button' type="submit" name="buttonView" value="View Credit Cards">
+    			</form>
+    			</div>
+    			<div class="column">
+    			<p> </p>
+    			</div>
+    			<div class="column">
+    			<form method="get"  action="AdminPage">
+    				<button class="button" type="submit" name="client">  Add Card    </button>
+    			</form>
+    </div>
+    <table  border="1" style="width:400px">
+        <thead>
+        <tr>
+            <th>Credit Card</th>
+            <th>Expiration Date</th>
+            <th>Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cardd : ${ cards }">
+            <td th:text="${ cardd.cardName }">name</td>
+            <td th:text="${cardd.dateExp}">date</td>
+            <td th:text="${ cardd.balance}">grade</td>
+        </tr>
+        </tbody>
+    </table>
+				</td>
+		</tr>
+	</table>
+	</div>
+
+	
+	<div class="column">
+	<table>
+	<tr>
+			<td colspan="1" align="right">
+				<form action="Whatever2">
+					
+					<br> Client Name: <br> <input type="text" name="clname"><br>
+					<br> Card From: <br> <input type="text" name="cdname1"><br>
+					<br> Card To: <br> <input type="text" name="cdname2"><br>
+					<br> Amount: <br> <input type="text" name="amount"><br>
+					<br> <input class="button" type="submit" name="button"
+						value="Transfer"><br>
+				</form>
+				</td>
+		</tr>
+	</table>
+	
+	
+	
+	</div>
+	<div class="column">
+	
+	<form method=post action="ClientPage">
+	<br> RON: <br> <input type="text" name="amountRon"><br>
+				<input class='button' type="submit" name="convertM" value="Convert">
+    			</form>
+    			<table  border="1" style="width:400px">
+        <thead>
+        <tr>
+            <th>EUR</th>
+            <th>USD</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="money : ${ moneys }">
+            <td th:text="${ money.euro }">EUR</td>
+            <td th:text="${ money.dollar}">USD</td>
+        </tr>
+        </tbody>
+    </table>
+				</td>
+		</tr>
+	</table>
+	
+	</div>
+	<div class="column">
+	<table>
+	
+
+		<tr>
+			<td colspan="1" align="center">
+				<div class="row">
+				<div class="column">
+				
+				<form method=post action="ClientPage">
+				        <input class='button' type="submit" name="clientView" value="View Client List">
+    			</form>
+    			</div>
+    			<div class="column">
+    			<p> </p>
+    			</div>
+    			<div class="column">
+    			<form method="get" action="Login">
+    		<button class="button" type="submit" name="client">  Log Out    </button>
+    		</form>
+    			</div>
+    			</div>
+    
+    <table  border="1" style="width:400px">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>CNP</th>
+            <th>Address</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client : ${ clients }">
+            <td th:text="${ client.clientName }">name</td>
+            <td th:text="${ client.cnp}">cnp</td>
+            <td th:text="${ client.address}">address</td>
+            <td th:text="${ client.email}">address</td>
+        </tr>
+        </tbody>
+    </table>
+				</td>
+		</tr>
+	</table>
+	
+	</div>
+	</div>
+	</div>
+	
+
+	</body>
 </html>

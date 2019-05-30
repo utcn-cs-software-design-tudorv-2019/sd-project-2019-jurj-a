@@ -3,10 +3,66 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<style>
+.button {
+	background-color: #FA5882;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+body {
+	background-image:
+		url("https://fr.kronospan-express.com/public/files/decors/kronodesign/K/K088.jpg");
+	background-color: #cccccc;
+}
+
+form {
+	text-align: center;
+}
+
+html, body, #wrapper {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#wrapper td {
+	vertical-align: middle;
+	text-align: center;
+}
+</style>
 </head>
 <body>
 
-This is the Admin Page.
+	<table id="wrapper">
+
+		<tr>
+			<td colspan="2"><img
+				src="https://cdn.fast-pay.cash/assets/images/logo/logo_color.png"
+				alt="FastPayLogo" align="middle">
+				<form action="Whatever7">
+					Card Name: <input type="text" name="cardname"><br>
+					<br> Balance: <input type="text" name="balance"><br>
+					<br> Expiration Date: <input type="text" name="date_exp"><br>
+					<br> <input class="button" type="submit" name="button"
+						value="Create"><br>
+				</form>
+				<form method="get" action="ClientPage">
+					<button class="button" type="submit" name="client">Cancel
+					</button>
+				</form></td>
+		</tr>
+	</table>
 
 </body>
 </html>
